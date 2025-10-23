@@ -9,21 +9,17 @@ public class Tradutor {
     public Scanner arquivo;
 
     public Tradutor() {
+
         try {
             this.arquivo = new Scanner(new File("src/dados/palavras.txt"));
+            while (this.arquivo.hasNextLine()) {
+                palavrasIngles.add(this.arquivo.nextLine().split("/")[0]);
+                palavrasPortugues.add(this.arquivo.nextLine().split("/")[1]);
+            }
+            this.arquivo.close();
         } catch (FileNotFoundException e) {
             System.err.println("Erro: Arquivo não encontrado!");
         }
-    }
-
-    public ArrayList<String> preenchePalavrasPortugues (String arquivoFormatado) {
-
-        return null;
-    }
-
-    public ArrayList<String> preenchePalavrasIngles (String arquivo) {
-
-        return null;
     }
 
     public ArrayList<String> toPortugues(String palavraing) {
