@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Tradutor {
     private ArrayList<String> palavrasPortugues = new ArrayList<>();
     private ArrayList<String> palavrasIngles = new ArrayList<>();
+    public ArrayList<String> palavrasTraduzidas = new ArrayList<>();
     public Scanner arquivo;
 
     public Tradutor() {
@@ -23,17 +24,29 @@ public class Tradutor {
     }
 
     public ArrayList<String> toPortugues(String palavraing) {
-
-        return null;
+        for (int i = 0; i < palavrasIngles.size(); i++) {
+            if (palavraing.toLowerCase().contains(palavrasIngles.get(i).toLowerCase())) {
+                palavrasTraduzidas.add(palavrasIngles.get(i));
+                return palavrasTraduzidas;
+            }
+        }
+        return palavrasTraduzidas;
     }
 
     public ArrayList<String> toIngles(String palavraport) {
-
-        return null;
+        for (int i = 0; i < palavrasPortugues.size(); i++) {
+            if (palavraport.toLowerCase().contains(palavrasPortugues.get(i).toLowerCase())) {
+                palavrasTraduzidas.add(palavrasPortugues.get(i));
+                return palavrasTraduzidas;
+            }
+        }
+        return palavrasTraduzidas;
     }
 
     public ArrayList<String> getPortugues() {
+        for (int i = 0; i < palavrasPortugues.size(); i++) {
 
+        }
         return null;
     }
 
