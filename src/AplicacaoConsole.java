@@ -10,7 +10,7 @@ public class AplicacaoConsole {
 
         // loop do menu de opçoes
         System.out.println(tradutor.strGetPortugues);
-        // System.out.println(tradutor.strGetIngles);
+        System.out.println(tradutor.strGetIngles);
         int opcao = 0;
         do {
             System.out.println("\n\n*************MENU*****************");

@@ -15,18 +15,19 @@ public class Tradutor {
     public Tradutor() {
 
         try {
-            this.arquivo = new Scanner(new File("src/dados/teste.txt"));
+            this.arquivo = new Scanner(new File("src/dados/palavras.txt"));
             while (this.arquivo.hasNextLine()) {
+                String linha = this.arquivo.nextLine();
                 // get portugues/ingles
-                strGetPortugues.append(this.arquivo.nextLine().split("/")[1]).append("/");
-                strGetPortugues.append(this.arquivo.nextLine().split("/")[0]).append("\n");
+                strGetPortugues.append(linha.split("/")[1]).append("/");
+                strGetPortugues.append(linha.split("/")[0]).append("\n");
 
                 // get ingles/portugues
-                strGetIngles.append(this.arquivo.nextLine());
+                strGetIngles.append(linha).append("\n");
 
                 // listas de palavras em ingles e portugues
-                palavrasIngles.add(this.arquivo.nextLine().split("/")[0]);
-                palavrasPortugues.add(this.arquivo.nextLine().split("/")[1]);
+                palavrasIngles.add(linha.split("/")[0]);
+                palavrasPortugues.add(linha.split("/")[1]);
 
             }
             this.arquivo.close();
