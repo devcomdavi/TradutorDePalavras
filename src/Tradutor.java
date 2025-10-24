@@ -2,7 +2,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.lang.StringBuilder;
 
 public class Tradutor {
     private ArrayList<String> palavrasPortugues = new ArrayList<>();
@@ -45,7 +44,6 @@ public class Tradutor {
         for (int i = 0; i < palavrasIngles.size(); i++) {
             if (palavrasIngles.get(i).toLowerCase().contains(palavraing.toLowerCase())) {
                 palavrasIngTraduzidas.add(palavrasPortugues.get(i));
-                return palavrasIngTraduzidas;
             }
         }
         return palavrasIngTraduzidas;
@@ -58,7 +56,6 @@ public class Tradutor {
         for (int i = 0; i < palavrasPortugues.size(); i++) {
             if (palavrasPortugues.get(i).toLowerCase().contains(palavraport.toLowerCase())) {
                 palavrasPortTraduzidas.add(palavrasIngles.get(i));
-                return palavrasPortTraduzidas;
             }
         }
         return palavrasPortTraduzidas;
