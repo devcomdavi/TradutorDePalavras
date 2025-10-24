@@ -8,8 +8,15 @@ public class AplicacaoConsole {
         String entrada;
         ArrayList<String> resultados; // posicoes adivinhadas
 
-        // loop do menu de opçoes
+        // teste dos arrays
+        /*for (String item : tradutor.listaGetPortugues) {
+            System.out.println(item);
+        }
+        for (String item : tradutor.listaGetIngles) {
+            System.out.println(item);
+        }*/
 
+        // loop do menu de opçoes
         int opcao = 0;
         do {
             System.out.println("\n\n*************MENU*****************");
