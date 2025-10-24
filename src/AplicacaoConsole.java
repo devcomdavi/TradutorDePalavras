@@ -9,8 +9,7 @@ public class AplicacaoConsole {
         ArrayList<String> resultados; // posicoes adivinhadas
 
         // loop do menu de opçoes
-        System.out.println(tradutor.strGetPortugues);
-        System.out.println(tradutor.strGetIngles);
+
         int opcao = 0;
         do {
             System.out.println("\n\n*************MENU*****************");
@@ -63,6 +62,7 @@ public class AplicacaoConsole {
                         System.out.println("lista vazia");
                     break;
                 case 4:
+                    tradutor.getPortugues();
                     resultados = tradutor.getIngles();
                     if (resultados.size() > 0) {
                         System.out.println("listagem de palavras em ingles:");

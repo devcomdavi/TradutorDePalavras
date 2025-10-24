@@ -56,13 +56,15 @@ public class Tradutor {
         return palavrasTraduzidas;
     }
 
-    public ArrayList<String> getPortugues() {
-
-        return null;
+    public StringBuilder getPortugues() {
+        //System.out.println(strGetPortugues);
+        System.out.println(palavrasPortugues);
+        return strGetPortugues;
     }
 
-    public ArrayList<String> getIngles() {
-
-        return null;
+    public StringBuilder getIngles() {
+        //System.out.println(strGetIngles);
+        System.out.println(palavrasIngles);
+        return strGetIngles;
     }
 }
