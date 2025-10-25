@@ -16,6 +16,8 @@ import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 import java.awt.Toolkit;
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.Objects;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 
@@ -89,11 +91,40 @@ public class TelaTradutor {
 		button = new JButton("Traduzir");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String selecionado = comboBox.getSelectedItem().toString();
-				if (selecionado.contains("portugu")) {
+				String selecionado = Objects.requireNonNull(comboBox.getSelectedItem()).toString();
+                textArea.setText(selecionado);
+				if (selecionado.contains("Portugu")) {
 					// TAMO AQUI ooooooooooooooooooooooooooooooooooooooooooooooooo
+                    String palavra = textField.getText();
+                    ArrayList<String> traducoes = tradutor.toPortugues(palavra);
+                    if (traducoes.size()>0){
+                        String sequenciaPalavras = "";
+                        for (int i = 0; i < traducoes.size(); i++) {
+                            sequenciaPalavras = sequenciaPalavras + traducoes.get(i) + "\n";
+                        }
+                        textArea.setText(sequenciaPalavras);
+                    }else{
+                        textArea.setText("Tradução não encontrada!");
+                    }
+
+                    //linha melhor para debugar!
+                    //textArea.setText(String.valueOf(tradutor.toPortugues(palavra)));
+
 				} else {
-					
+                    String palavra = textField.getText();
+                    ArrayList<String> traducoes = tradutor.toIngles(palavra);
+                    if (traducoes.size()>0){
+                        String sequenciaIngles = "";
+                        for (int i = 0; i < traducoes.size(); i++) {
+                            sequenciaIngles = sequenciaIngles + traducoes.get(i) + "\n";
+                        }
+                        textArea.setText(sequenciaIngles);
+                    }else {
+                        textArea.setText("Tradução não encontrada!");
+                    }
+
+                    //linha melhor para debugar!
+                    //textArea.setText(String.valueOf(tradutor.toIngles(palavra)));
 				}	
 			}
 		});
