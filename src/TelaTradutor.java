@@ -71,9 +71,9 @@ public class TelaTradutor {
 		frame.getContentPane().setBackground(new Color(204, 204, 204));
 		frame.setBackground(new Color(255, 255, 255));
 		frame.setForeground(new Color(0, 0, 0));
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaTradutor.class.getResource("/imagem/faustoFofo.jpg")));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaTradutor.class.getResource("/imagem/mundo.png")));
 		frame.setFont(new Font("Xilosa", Font.PLAIN, 12));
-		frame.setTitle("Tradutor");
+		frame.setTitle("Traduz Aqui");
 		frame.setBounds(100, 100, 759, 552);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -164,7 +164,7 @@ public class TelaTradutor {
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
                 int count = tradutor.getIngles().size();
-                textArea.setText("Contagem total de palavras Inglês/Portugês: " + count + "\n" + "\n");
+                textArea.setText("Contagem total de palavras Inglês/Português: " + count + "\n" + "\n");
 				textArea.insert("",1);
 				for (String item : tradutor.getIngles()) {
 					textArea.append(item + "\n"); 
