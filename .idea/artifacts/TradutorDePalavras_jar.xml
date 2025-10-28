@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TradutorDePalavras:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TradutorDePalavras_jar</output-path>
+    <root id="archive" name="TradutorDePalavras.jar">
+      <element id="module-output" name="TradutorDePalavras" />
+      <element id="archive" name="tradutor.jar" />
+    </root>
+  </artifact>
+</component>

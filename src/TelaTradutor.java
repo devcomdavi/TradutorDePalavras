@@ -99,15 +99,17 @@ public class TelaTradutor {
 				if (selecionado.contains("Portugu")) {
                     String palavra = textField.getText();
                     ArrayList<String> traducoes = tradutor.toPortugues(palavra);
+                    int count = traducoes.size();
                     if (traducoes.size()>0){
-                        String sequenciaPalavras = "";
+                        String sequenciaPortugues = "";
                         for (int i = 0; i < traducoes.size(); i++) {
-                            sequenciaPalavras = sequenciaPalavras + traducoes.get(i) + "\n";
+                            sequenciaPortugues = sequenciaPortugues + traducoes.get(i) + "\n";
                         }
-                        textArea.setText(sequenciaPalavras);
+                        textArea.setText("Contagem de palavras encontradas: "+ count + "\n" + "\n" + sequenciaPortugues);
                     }else{
                         textArea.setText("Tradução não encontrada!");
                     }
+                    textArea.setCaretPosition(0);
 
                     //linha melhor para debugar!
                     //textArea.setText(String.valueOf(tradutor.toPortugues(palavra)));
@@ -115,15 +117,17 @@ public class TelaTradutor {
 				} else {
                     String palavra = textField.getText();
                     ArrayList<String> traducoes = tradutor.toIngles(palavra);
+                    int count = traducoes.size();
                     if (traducoes.size()>0){
                         String sequenciaIngles = "";
                         for (int i = 0; i < traducoes.size(); i++) {
                             sequenciaIngles = sequenciaIngles + traducoes.get(i) + "\n";
                         }
-                        textArea.setText(sequenciaIngles);
+                        textArea.setText("Contagem de palavras encontradas: "+ count + "\n" + "\n" + sequenciaIngles);
                     }else {
                         textArea.setText("Tradução não encontrada!");
                     }
+                    textArea.setCaretPosition(0);
 
                     //linha melhor para debugar!
                     //textArea.setText(String.valueOf(tradutor.toIngles(palavra)));
@@ -143,10 +147,13 @@ public class TelaTradutor {
 		button_1.setFont(new Font("Poppins SemiBold", Font.PLAIN, 11));
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textArea.setText("");
+                int count = tradutor.getPortugues().size();
+                textArea.setText("Contagem total de palavras Português/inglês: " + count + "\n" + "\n");
+				textArea.insert("",1);
 				for (String item : tradutor.getPortugues()) {
-					textArea.append(item + "\n"); 
+					textArea.append(item + "\n");
 				}
+                textArea.setCaretPosition(0);
 			}
 		});
 		button_1.setBounds(535, 98, 181, 23);
@@ -156,10 +163,13 @@ public class TelaTradutor {
 		button_2.setFont(new Font("Poppins SemiBold", Font.PLAIN, 11));
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textArea.setText("");
+                int count = tradutor.getIngles().size();
+                textArea.setText("Contagem total de palavras Inglês/Portugês: " + count + "\n" + "\n");
+				textArea.insert("",1);
 				for (String item : tradutor.getIngles()) {
 					textArea.append(item + "\n"); 
 				}
+                textArea.setCaretPosition(0);
 			}
 		});
 		button_2.setBounds(344, 98, 181, 23);
@@ -216,7 +226,5 @@ public class TelaTradutor {
 		label_5.setFont(new Font("Bebas Neue", Font.PLAIN, 45));
 		label_5.setBounds(290, 22, 181, 40);
 		frame.getContentPane().add(label_5);
-		
-		
 	}
 }
