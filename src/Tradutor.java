@@ -62,14 +62,10 @@ public class Tradutor {
     }
 
     public ArrayList<String> getPortugues() {
-        //System.out.println(strGetPortugues);
-        System.out.println(palavrasPortugues);
         return listaGetPortugues;
     }
 
     public ArrayList<String> getIngles() {
-        //System.out.println(strGetIngles);
-        System.out.println(palavrasIngles) ;
         return listaGetIngles;
     }
 }

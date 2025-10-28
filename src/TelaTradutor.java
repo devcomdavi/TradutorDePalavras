@@ -37,6 +37,7 @@ public class TelaTradutor {
 	private JScrollPane scrollPane;
 	private JLabel label_3;
 	private JLabel label_4;
+	private JLabel label_5;
 
 	/**
 	 * Launch the application.
@@ -73,28 +74,29 @@ public class TelaTradutor {
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(TelaTradutor.class.getResource("/imagem/faustoFofo.jpg")));
 		frame.setFont(new Font("Xilosa", Font.PLAIN, 12));
 		frame.setTitle("Tradutor");
-		frame.setBounds(100, 100, 575, 394);
+		frame.setBounds(100, 100, 759, 552);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Para Português", "Para Inglês"}));
-		comboBox.setFont(new Font("Xilosa", Font.PLAIN, 15));
-		comboBox.setBounds(260, 55, 143, 28);
+		comboBox.setFont(new Font("Poppins", Font.PLAIN, 15));
+		comboBox.setBounds(40, 148, 207, 28);
 		frame.getContentPane().add(comboBox);
 		
 		textField = new JTextField();
-		textField.setBounds(260, 120, 143, 20);
+		textField.setFont(new Font("Arial", Font.PLAIN, 13));
+		textField.setBounds(40, 235, 207, 28);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
 		button = new JButton("Traduzir");
+		button.setForeground(new Color(0, 0, 0));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String selecionado = Objects.requireNonNull(comboBox.getSelectedItem()).toString();
                 textArea.setText(selecionado);
 				if (selecionado.contains("Portugu")) {
-					// TAMO AQUI ooooooooooooooooooooooooooooooooooooooooooooooooo
                     String palavra = textField.getText();
                     ArrayList<String> traducoes = tradutor.toPortugues(palavra);
                     if (traducoes.size()>0){
@@ -128,16 +130,17 @@ public class TelaTradutor {
 				}	
 			}
 		});
-		button.setFont(new Font("Xilosa", Font.PLAIN, 15));
-		button.setBounds(260, 145, 89, 23);
+		button.setFont(new Font("Poppins Black", Font.PLAIN, 13));
+		button.setBounds(40, 269, 103, 28);
 		frame.getContentPane().add(button);
 		
 		label = new JLabel("O que deseja traduzir:");
-		label.setFont(new Font("Xilosa", Font.PLAIN, 14));
-		label.setBounds(259, 101, 144, 14);
+		label.setFont(new Font("Poppins", Font.PLAIN, 14));
+		label.setBounds(40, 219, 197, 14);
 		frame.getContentPane().add(label);
 		
 		button_1 = new JButton("Palavras português/inglês");
+		button_1.setFont(new Font("Poppins SemiBold", Font.PLAIN, 11));
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textArea.setText("");
@@ -146,10 +149,11 @@ public class TelaTradutor {
 				}
 			}
 		});
-		button_1.setBounds(26, 11, 168, 23);
+		button_1.setBounds(535, 98, 181, 23);
 		frame.getContentPane().add(button_1);
 		
 		button_2 = new JButton("Palavras inglês/português");
+		button_2.setFont(new Font("Poppins SemiBold", Font.PLAIN, 11));
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textArea.setText("");
@@ -158,27 +162,27 @@ public class TelaTradutor {
 				}
 			}
 		});
-		button_2.setBounds(26, 42, 168, 23);
+		button_2.setBounds(344, 98, 181, 23);
 		frame.getContentPane().add(button_2);
 		
 		label_1 = new JLabel("");
 		label_1.setIcon(new ImageIcon(TelaTradutor.class.getResource("/imagem/bandeiraBrasil.png")));
-		label_1.setBounds(260, 11, 62, 40);
+		label_1.setBounds(40, 98, 62, 40);
 		frame.getContentPane().add(label_1);
 		
 		label_2 = new JLabel("");
 		label_2.setIcon(new ImageIcon(TelaTradutor.class.getResource("/imagem/bandeiraUSA.png")));
-		label_2.setBounds(341, 11, 62, 40);
+		label_2.setBounds(121, 98, 62, 40);
 		frame.getContentPane().add(label_2);
 		
 		label_3 = new JLabel("");
 		label_3.setIcon(new ImageIcon(TelaTradutor.class.getResource("/imagem/bandeiraUSAbw.png")));
-		label_3.setBounds(341, 11, 62, 40);
+		label_3.setBounds(121, 98, 62, 40);
 		frame.getContentPane().add(label_3);
 		
 		label_4 = new JLabel("");
 		label_4.setIcon(new ImageIcon(TelaTradutor.class.getResource("/imagem/bandeiraBrasilbw.png")));
-		label_4.setBounds(260, 11, 62, 40);
+		label_4.setBounds(40, 98, 62, 40);
 		frame.getContentPane().add(label_4);
 		
 		comboBox.addActionListener(new ActionListener() {
@@ -200,11 +204,18 @@ public class TelaTradutor {
 		
 		scrollPane = new JScrollPane();
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollPane.setBounds(26, 76, 168, 268);
+		scrollPane.setBounds(344, 132, 372, 364);
 		frame.getContentPane().add(scrollPane);
 		
 		textArea = new JTextArea();
+		textArea.setFont(new Font("Arial", Font.PLAIN, 15));
 		scrollPane.setViewportView(textArea);
+		
+		label_5 = new JLabel("TRADUZ AQUI\r\n");
+		label_5.setHorizontalAlignment(SwingConstants.CENTER);
+		label_5.setFont(new Font("Bebas Neue", Font.PLAIN, 45));
+		label_5.setBounds(290, 22, 181, 40);
+		frame.getContentPane().add(label_5);
 		
 		
 	}
