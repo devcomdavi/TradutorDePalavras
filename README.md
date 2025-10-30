@@ -72,15 +72,4 @@ O programa solicita a entrada pelo teclado e exibe as traduções encontradas (o
 
 Para adicionar novas palavras, edite `src/dados/palavras.txt` seguindo o formato `ingles/portugues`. Abra um pull request com suas alterações.
 
-## Licença
-
-Este repositório pode usar uma licença permissiva — por exemplo, MIT. Se desejar, adicione um arquivo `LICENSE` com o texto de licença apropriado.
-
----
-
-Se quiser, eu posso também:
-
-- adicionar um script de build (`build.bat` ou `build.ps1`) para automatizar compilação/execução no Windows;
-- revisar e limpar o arquivo `src/dados/palavras.txt` removendo entradas duplicadas ou corrigindo erros de concatenação.
-
 
