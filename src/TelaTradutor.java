@@ -8,7 +8,6 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -110,10 +109,6 @@ public class TelaTradutor {
                         textArea.setText("Tradução não encontrada!");
                     }
                     textArea.setCaretPosition(0);
-
-                    //linha melhor para debugar!
-                    //textArea.setText(String.valueOf(tradutor.toPortugues(palavra)));
-
 				} else {
                     String palavra = textField.getText();
                     ArrayList<String> traducoes = tradutor.toIngles(palavra);
@@ -128,9 +123,6 @@ public class TelaTradutor {
                         textArea.setText("Tradução não encontrada!");
                     }
                     textArea.setCaretPosition(0);
-
-                    //linha melhor para debugar!
-                    //textArea.setText(String.valueOf(tradutor.toIngles(palavra)));
 				}	
 			}
 		});
