@@ -43,7 +43,7 @@ public class Tradutor {
         }
         for (int i = 0; i < palavrasIngles.size(); i++) {
             if (palavrasIngles.get(i).toUpperCase().contains(palavraing.toUpperCase())) {
-                palavrasIngTraduzidas.add(palavrasPortugues.get(i));
+                palavrasIngTraduzidas.add(palavrasIngles.get(i) + " → " + palavrasPortugues.get(i));
             }
         }
         return palavrasIngTraduzidas;
@@ -55,7 +55,7 @@ public class Tradutor {
         }
         for (int i = 0; i < palavrasPortugues.size(); i++) {
             if (palavrasPortugues.get(i).toUpperCase().contains(palavraport.toUpperCase())) {
-                palavrasPortTraduzidas.add(palavrasIngles.get(i));
+                palavrasPortTraduzidas.add(palavrasPortugues.get(i) + " → " + palavrasIngles.get(i));
             }
         }
         return palavrasPortTraduzidas;
